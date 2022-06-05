@@ -33,10 +33,11 @@ toast('2，打卡完美校园');
 //id("menuTitle").className("android.widget.TextView").text("健康打卡").waitFor().click();
 //id("menuTitle").className("android.widget.TextView").text("健康打卡").findOne().click();
 ///id("menuTitle").className("android.widget.TextView").text("健康打卡").findOne().parent().waitFor()
+
 //如果屏幕上出现“健康打卡”四个字便点击
 id("menuTitle").className("android.widget.TextView").text("健康打卡").findOne().parent().click();
 
-//等待“专业/部门”这个字符串出现，当然，用户可以自行修改
+//这一步是为了判定是否到了打卡界面。等待“专业/部门”这个字符串出现，当然，用户可以自行修改
 className("android.widget.TextView").text("专业/部门").waitFor()
 //className("android.widget.TextView").text("专业/部门").findOne().parent().parent().waitFor();
 toast('3，进入打卡界面');
