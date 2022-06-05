@@ -1,7 +1,7 @@
 
 auto;
 
-toast('1');
+toast('1，自动打卡开始运行');
 
 if (device.isScreenOn)
 {   
@@ -29,16 +29,17 @@ engines.execScriptFile("daka2.js");
 }
 app.launchApp("完美校园"); //添加判定是否在该应用中
 sleep(2000);
-toast('2');
+toast('2，打卡完美校园');
 //id("menuTitle").className("android.widget.TextView").text("健康打卡").waitFor().click();
 //id("menuTitle").className("android.widget.TextView").text("健康打卡").findOne().click();
 ///id("menuTitle").className("android.widget.TextView").text("健康打卡").findOne().parent().waitFor()
+//如果屏幕上出现“健康打卡”四个字便点击
 id("menuTitle").className("android.widget.TextView").text("健康打卡").findOne().parent().click();
 
-
+//等待“专业/部门”这个字符串出现，当然，用户可以自行修改
 className("android.widget.TextView").text("专业/部门").waitFor()
 //className("android.widget.TextView").text("专业/部门").findOne().parent().parent().waitFor();
-toast('3');
+toast('3，进入打卡界面');
 swipe(500,2036,500,138,300);
 sleep(500);
 swipe(500,2036,500,248,300);
@@ -54,7 +55,7 @@ sleep(500);
 swipe(500,2036,500,58,300);
 sleep(500);
 click(500,2200);
-toast('end');
+toast('end，手动提交');
 exit();
 
 
